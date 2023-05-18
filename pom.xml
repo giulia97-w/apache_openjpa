@@ -953,10 +953,7 @@
                 <jdbc.DBDictionary />
             </properties>
             <repositories>
-             <repository>
-             <id>jacoco</id>
-             <url>https://repo1.maven.org/maven2/</url>
-           </repository>
+             
 
                 <repository>
                     <id>mssql.repository</id>
