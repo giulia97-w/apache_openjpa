@@ -39,9 +39,11 @@ jobs:
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
         with:
-          name: Pit  Reports for openjpa-jdbc
+          name: Pit and Jacoco Reports for openjpa-jdbc
           path: |
             openjpa-jdbc/target/pit-reports
+            openjpa-jdbc/target/site/jacoco
+
             
             
       - name: Save  Pit Reports for openjpa-lib
