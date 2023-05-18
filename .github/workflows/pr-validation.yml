@@ -37,3 +37,11 @@ jobs:
         run: mvn -B install --file pom.xml
       - name: 'Remove Snapshots Before Caching'
         run: find ~/.m2 -name '*SNAPSHOT' | xargs rm -Rf
+        
+      - name: Save Jacoco and Pit Reports for openjpa-jdbc
+        uses: actions/upload-artifact@v3
+        with:
+          name: Pit and Jacoco Reports for openjpa-jdbc
+          path: |
+            openjpa-jdbc/target/site/jacoco
+
