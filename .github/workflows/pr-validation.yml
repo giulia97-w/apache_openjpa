@@ -36,6 +36,11 @@ jobs:
       - name: 'Build with Maven'
         run: mvn -B verify
         
+      - name: searching target
+        run: |
+          cd openjpa-jdbc
+          ls
+        
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
         with:
