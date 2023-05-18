@@ -42,4 +42,12 @@ jobs:
           name: Pit  Reports for openjpa-jdbc
           path: |
             openjpa-jdbc/target/pit-reports
+            
+            
+      - name: Save  Pit Reports for openjpa-lib
+        uses: actions/upload-artifact@v3
+        with:
+          name: Pit  Reports for openjpa-lib
+          path: |
+            openjpa-lib/target/pit-reports
 
