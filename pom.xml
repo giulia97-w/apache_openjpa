@@ -2368,7 +2368,6 @@
                     <excludes>
                         <!-- generated content -->
                         <exclude>**/.*/**</exclude>
-                        <exclude>**/target/**/*</exclude>
                     </excludes>
                     <includes>
                         <!-- only check common source files -->
