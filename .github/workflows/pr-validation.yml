@@ -36,10 +36,10 @@ jobs:
       - name: 'Build with Maven'
         run: mvn -B verify
         
-      - name: Save Jacoco and Pit Reports for openjpa-jdbc
+      - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
         with:
-          name: Pit and Jacoco Reports for openjpa-jdbc
+          name: Pit  Reports for openjpa-jdbc
           path: |
-            openjpa-jdbc/target/site/jacoco
+            openjpa-jdbc/target/pit-reports
 
