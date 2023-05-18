@@ -246,7 +246,6 @@
                                 <exclude>scripts/*.dict</exclude>
                                 <!-- generated content -->
                                 <exclude>**/.*/**</exclude>
-                                <exclude>**/target/**/*</exclude>
                                 <exclude>**/dependency-reduced-pom.xml</exclude>
                                 <exclude>**/*.log</exclude>
                                 <exclude>**/maven-eclipse.xml</exclude>
