@@ -40,6 +40,8 @@ jobs:
         run: |
           cd openjpa-jdbc
           ls
+          cd target
+          ls
         
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
