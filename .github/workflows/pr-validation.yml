@@ -34,7 +34,7 @@ jobs:
           key: 'cache'
           restore-keys: 'cache'
       - name: 'Build with Maven'
-        run: mvn clean install
+        run: mvn -B verify
         
       - name: Save Jacoco and Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
