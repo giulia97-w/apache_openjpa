@@ -40,6 +40,8 @@
     <properties>
         <java.class.version>11</java.class.version>
         <java.testclass.version>11</java.testclass.version>
+        <sonar.organization>giulia97-w</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
         <doclint>none</doclint>
 
