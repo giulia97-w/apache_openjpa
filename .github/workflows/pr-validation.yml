@@ -42,6 +42,8 @@ jobs:
           ls
           cd target
           ls
+          cd site
+          ls
         
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
