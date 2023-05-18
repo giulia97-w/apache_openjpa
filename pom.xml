@@ -693,7 +693,7 @@
                        </execution>
                      </executions>
                    </plugin>
-                </plugins>
+                
 
                  
                     <plugin>
