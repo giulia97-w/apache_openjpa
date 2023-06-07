@@ -52,7 +52,7 @@ jobs:
         run: mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=giulia97-w_apache_openjpa -Pcoverage
       - name: ba-dua coverage
 
-        run: java -jar dfc/ba-dua-cli-0.2.0-all.jar report -input openjpa-jdbc/badua.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
+        run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-jdbc/badua.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
          
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
