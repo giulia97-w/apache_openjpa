@@ -48,9 +48,13 @@ jobs:
       - name: Build and analyze
  
         run: mvn test
-      - name: ba-dua coverage
+      - name: ba-dua coverage openjpa-jdbc
 
         run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-jdbc/coverage.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
+         
+      - name: ba-dua coverage openjpa-lib
+
+        run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-lib/coverage.ser -classes openjpa-lib/target/classes -show-classes -show-methods -xml openjpa-lib/badua.xml
          
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
@@ -74,4 +78,13 @@ jobs:
           path: |
             openjpa-lib/target/pit-reports
             openjpa-lib/target/site/jacoco-ut
+            
+            
+      - name: ba-dua report for openjpa-lib
+        uses: actions/upload-artifact@v3
+        with:
+          name: ba-dua report for openjpa-lib
+          path: |
+            openjpa-lib/badua.xml
 
+    
