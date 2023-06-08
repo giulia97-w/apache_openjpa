@@ -45,11 +45,7 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: SonarScan 
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=giulia97-w_apache_openjpa 
+      
       - name: Build and analyze openjpa-jdbc
 
         run: |
@@ -82,7 +78,7 @@ jobs:
       
       - name: Build and analyze openjpa-lib
         run: |
-          cd
+          cd  $GITHUB_WORKSPACE
           cd openjpa-lib
           mvn test -Pba-dua-coverage
           
