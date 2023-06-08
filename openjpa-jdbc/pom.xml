@@ -52,7 +52,7 @@
                 </executions>
                 <configuration>
                   <argLine>
-                    -javaagent:"openjpa-jdbc/dfc/ba-dua-agent-rt-0.2.0-all.jar"
+                    -javaagent:"openjpa-jdbc/dfc/ba-dua-agent-rt-0.6.0-all.jar"
                   </argLine>
                 </configuration>
               </plugin>
