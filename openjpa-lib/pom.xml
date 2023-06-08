@@ -29,7 +29,11 @@
         <artifactId>openjpa-parent</artifactId>
         <version>4.0.0-SNAPSHOT</version>
     </parent>
-
+  <properties>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <java.class.version>8</java.class.version>
+        <java.testclass.version>8</java.testclass.version>
+        </properties>
     <artifactId>openjpa-lib</artifactId>
     <packaging>jar</packaging>
     <name>OpenJPA Utilities Library</name>
