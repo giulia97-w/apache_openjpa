@@ -83,7 +83,7 @@ jobs:
       - name: Build openjpa-jdbc
 
         run: |
-            cd:$GITHUB_WORKSPACE
+            cd $GITHUB_WORKSPACE
             cd openjpa-jdbc
             mvn -B -Pba-dua-coverage -Dmaven.compiler.source=11 -Dmaven.compiler.target=11 
 
