@@ -92,17 +92,13 @@ jobs:
             cd openjpa-jdbc
             mvn -B -Pba-dua-coverage -Dmaven.compiler.source=11 -Dmaven.compiler.target=11 
 
-          
-      - name: ba-dua coverage openjpa-jdbc
 
-        run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-jdbc/coverage.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
-      
       - name: ba-dua report for openjpa-jdbc
         uses: actions/upload-artifact@v3
         with:
           name: ba-dua report for openjpa-jdbc
           path: |
-            openjpa-jdbc/badua.xml
+            openjpa-jdbc/target/badua.xml
             
       
       
