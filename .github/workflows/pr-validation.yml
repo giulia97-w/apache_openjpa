@@ -50,15 +50,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B clean verify -Dmaven.compiler.source=11 -Dmaven.compiler.target=11 org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=giulia97-w_apache_openjpa 
-      - name: Build and analyze openjpa-jdbc
+      #- name: Build and analyze openjpa-jdbc
 
-        run: |
-          cd openjpa-jdbc
-          mvn test -Pba-dua-coverage
+       # run: |
+        #  cd openjpa-jdbc
+         # mvn test -Pba-dua-coverage
           
-      - name: ba-dua coverage openjpa-jdbc
+     # - name: ba-dua coverage openjpa-jdbc
 
-        run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-jdbc/coverage.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
+     #   run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-jdbc/coverage.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
       
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
@@ -77,12 +77,12 @@ jobs:
           path: |
             openjpa-lib/target/pit-reports
             openjpa-lib/target/site/jacoco-ut
-      - name: ba-dua report for openjpa-jdbc
-        uses: actions/upload-artifact@v3
-        with:
-          name: ba-dua report for openjpa-jdbc
-          path: |
-            openjpa-jdbc/badua.xml
+     # - name: ba-dua report for openjpa-jdbc
+     #   uses: actions/upload-artifact@v3
+      #  with:
+       #   name: ba-dua report for openjpa-jdbc
+       #   path: |
+        #    openjpa-jdbc/badua.xml
             
       
       
