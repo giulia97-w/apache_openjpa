@@ -36,29 +36,47 @@
     <description>OpenJPA JDBC</description>
 <profiles>
  <profile>
-          <id>ba-dua-coverage</id>
-          <build>
-            <plugins>
-              <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
-                <executions>
-                  <execution>
-                    <goals>
-                      <goal>test</goal>
-                    </goals>
-                  </execution>
-                </executions>
+      <id>ba-dua-coverage</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven-surefire-plugin.version}</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>test</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <argLine>
+                -javaagent:"ba-dua-agent-rt-0.6.0-all.jar"
+              </argLine>
+            </configuration>
+          </plugin>
+	
+	
+          <!-- Generate report in xml format -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.5.0</version>
+            <executions>
+              <execution>
+                <id>Generate Ba-Dua report</id>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <phase>test</phase>
                 <configuration>
-                  <argLine>
-                    -javaagent:"ba-dua-agent-rt-0.6.0-all.jar"
-                  </argLine>
+                  <workingDirectory>${project.basedir}</workingDirectory>
+                  <executable>dfc/report.sh</executable>
                 </configuration>
-              </plugin>
-            </plugins>
-          </build>
-        </profile>  
+              </execution>
+            </executions>
+          </plugin> 
  </profiles>
 <dependencies>
         <dependency>
