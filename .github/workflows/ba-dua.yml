@@ -82,7 +82,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
           
       - name: change permission
-        run: chmod +x exec/report.sh
+        run: |
+          cd openjpa-jdbc
+          chmod +x exec/report.sh
       - name: Build openjpa-jdbc
 
         run: |
