@@ -35,6 +35,7 @@
     <name>OpenJPA JDBC</name>
     <description>OpenJPA JDBC</description>
 <profiles>
+	<profile>
 	<id>pit-test</id>
       <build>
         <plugins>
