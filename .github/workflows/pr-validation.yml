@@ -95,7 +95,8 @@ jobs:
         run: |
           cd  $GITHUB_WORKSPACE
           cd openjpa-lib
-          mvn test -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8 -Pba-dua-coverage
+          mvn compile -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8
+          mvn test -Pba-dua-coverage -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8
           
       - name: ba-dua coverage openjpa-lib
 
