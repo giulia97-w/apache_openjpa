@@ -81,7 +81,7 @@ jobs:
         run: |
           cd openjpa-jdbc
           chmod +x exec/report.sh
-      - name: Build openjpa-jdbc
+      - name: ba-dua for openjpa-jdbc
 
         run: |
             cd $GITHUB_WORKSPACE
