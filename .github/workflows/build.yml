@@ -13,7 +13,7 @@
 # CONDITIONS OF ANY KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations under the License.
 #
-name: Report Generations and SonarCloud Scan 
+name: ba-dua reports
 on:
   push:
     branches:
@@ -62,6 +62,42 @@ jobs:
           name: ba-dua report for openjpa-lib
           path: |
             openjpa-lib/badua.xml
+            
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: 'zulu' # Alternative distribution options are available.
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build openjpa-jdbc
+
+        run: |
+            cd:$GITHUB_WORKSPACE
+            cd openjpa-jdbc
+            mvn -B -Pba-dua-coverage -Dmaven.compiler.source=11 -Dmaven.compiler.target=11 
+
+          
+      - name: ba-dua coverage openjpa-jdbc
+
+        run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-jdbc/coverage.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
+      
+      - name: ba-dua report for openjpa-lib
+        uses: actions/upload-artifact@v3
+        with:
+          name: ba-dua report for openjpa-lib
+          path: |
+            openjpa-jdbc/badua.xml
             
       
       
