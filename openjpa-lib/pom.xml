@@ -31,8 +31,8 @@
     </parent>
   <properties>
         <maven.javadoc.skip>true</maven.javadoc.skip>
-        <java.class.version>8</java.class.version>
-        <java.testclass.version>8</java.testclass.version>
+        <java.class.version>11</java.class.version>
+        <java.testclass.version>11</java.testclass.version>
         </properties>
     <artifactId>openjpa-lib</artifactId>
     <packaging>jar</packaging>
