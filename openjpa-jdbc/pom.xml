@@ -35,6 +35,58 @@
     <name>OpenJPA JDBC</name>
     <description>OpenJPA JDBC</description>
 <profiles>
+	<id>pit-test</id>
+      <build>
+        <plugins>
+	<plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <version>1.4.3</version>
+            <executions>
+                <execution>
+                    <id>pit-report</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>mutationCoverage</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <timeoutConstant>2000</timeoutConstant>
+                <timeoutFactor>1</timeoutFactor>
+                <targetClasses>
+                    
+                    <param>org.apache.openjpa.jdbc.identifier.QualifiedDBIdentifier</param>
+
+
+                </targetClasses>
+                <targetTests>
+                    
+                    
+
+                    
+                    <param>org.apache.openjpa.jdbc.identifier.QualifiedIdentifierSplitPathTest</param>
+                    <param>org.apache.openjpa.jdbc.identifier.QualifiedIdentifierEqualTest</param>
+                    <param>org.apache.openjpa.jdbc.identifier.QualifiedIdentifierPathEqualTest</param>
+
+
+
+                    
+                </targetTests>
+                <avoidCallsTo>
+                    <avoidCallsTo>java.util.logging</avoidCallsTo>
+                    <avoidCallsTo>org.apache.log4j</avoidCallsTo>
+                    <avoidCallsTo>org.slf4j</avoidCallsTo>
+                    <avoidCallsTo>org.apache.commons.logging</avoidCallsTo>
+                </avoidCallsTo>
+            </configuration>
+        </plugin>
+	</plugins>
+      </build>
+    </profile>
+	
+	
+	
  <profile>
       <id>ba-dua-coverage</id>
       <build>
