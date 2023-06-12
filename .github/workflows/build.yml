@@ -92,10 +92,10 @@ jobs:
 
         run: java -jar dfc/ba-dua-cli-0.6.0-all.jar report -input openjpa-jdbc/coverage.ser -classes openjpa-jdbc/target/classes -show-classes -show-methods -xml openjpa-jdbc/badua.xml
       
-      - name: ba-dua report for openjpa-lib
+      - name: ba-dua report for openjpa-jdbc
         uses: actions/upload-artifact@v3
         with:
-          name: ba-dua report for openjpa-lib
+          name: ba-dua report for openjpa-jdbc
           path: |
             openjpa-jdbc/badua.xml
             
