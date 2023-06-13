@@ -52,6 +52,9 @@ jobs:
         run: mvn -B clean verify -Dmaven.compiler.source=11 -Dmaven.compiler.target=11 org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=giulia97-w_apache_openjpa 
       - name: pit-report 
         run: mvn test -Ppit-test
+        
+      - name: jacoco-report 
+        run: mvn test -Pjacoco
       - name: Save  Pit Reports for openjpa-jdbc
         uses: actions/upload-artifact@v3
         with:
